@@ -1,11 +1,9 @@
-import { useState } from "react";
+
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./styles.module.scss"
 
 export const Header = ({value,setValue,setVisible}) => {
-   // const [value, setValue] = useState("");
-
 
    return (
       <header className={styles.header}>

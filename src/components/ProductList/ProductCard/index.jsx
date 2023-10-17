@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss"
 
-export const ProductCard = ({ product, setValue, value, productList, setCartList, cartList,updatedCartList   }) => {
+export const ProductCard = ({ product, setValue, setCartList, cartList, }) => {
 
 
     const cartArray = () => {
@@ -8,12 +8,8 @@ export const ProductCard = ({ product, setValue, value, productList, setCartList
         const updatedCartList = cartList.filter((element) => element !== product)
 
         setCartList([...updatedCartList, product]);
-
-        setValue(updatedCartList.length+1)
-
-
+        setValue(updatedCartList.length + 1)
     }
-
 
     return (
         <li className={styles.list__item}>

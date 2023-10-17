@@ -1,28 +1,38 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { HomePage } from "./pages/HomePage"
 
 function App() {
+  const getLocalItems = (JSON.parse(localStorage.getItem("@CARTLIST")))
+  const getValue = (JSON.parse(localStorage.getItem("@VALUE")))
 
- const [visible,setVisible] = useState(true);
-console.log(visible);
+  const [value, setValue] = useState(
+    getValue ? getValue : 0
+  );
+  const [visible, setVisible] = useState(true);
+  const [cartList, setCartList] = useState(
+    getLocalItems ? getLocalItems : []
+  );
 
-const [productList, setProductList] = useState([]);
-const [cartList, setCartList] = useState([]);
+  useEffect(() => {
+    localStorage.setItem("@CARTLIST", JSON.stringify(cartList));
+    console.log("Ocorreu uma atualização");
+  }, [cartList])
 
 
-
-// const cartArray = () => {
-//   setValue(value+1)
-//   setCartList([...cartList,product]);    
-//   console.log(cartList);
-  
-// }
+  useEffect(() => {
+    localStorage.setItem("@VALUE", JSON.stringify(value));
+  }, [value])
 
   return (
-  <>
-    <HomePage setVisible={setVisible} visible ={visible}/>
-     
-  </>
+    <>
+      <HomePage setVisible={setVisible}
+        visible={visible}
+        cartList={cartList}
+        setCartList={setCartList}
+        value={value}
+        setValue={setValue} />
+
+    </>
   )
 }
 

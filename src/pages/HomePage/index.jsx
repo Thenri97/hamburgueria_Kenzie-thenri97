@@ -4,18 +4,9 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { burgersApi } from "../../services/api";
 import styles from "./styles.module.scss"
-import { TRUE } from "sass";
 
-
-export const HomePage = ({ setVisible, visible, cartArray }) => {
+export const HomePage = ({ setVisible, visible, cartArray, setCartList, cartList, value, setValue }) => {
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState([]);
-   console.log(cartList);
-
-
-   // console.log(productList)
-
-   // console.log(productList);
    // useEffect montagem - carrega os produtos da API e joga em productList
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
    // adição, exclusão, e exclusão geral do carrinho
@@ -31,37 +22,28 @@ export const HomePage = ({ setVisible, visible, cartArray }) => {
             const { data } = await burgersApi.get("/products");
             setProductList(data);
          } catch (error) {
-            console.log(error);
-
+            console.log(error)
          }
       }
       getBurgers();
-      console.log("Ocorreu uma montagem");
-   }, [])
 
-   useEffect(() => {
-      console.log("Ocorreu uma atualização");
-   }, [performance])
+   }, [])
 
    useEffect(() => {
       return () => {
-         console.log("ocorreu uma desmontagem!");
+         // console.log("ocorreu uma desmontagem!");
       }
    }, [])
 
-
-   const [value, setValue] = useState(0);
-
-   const [CartModalRenderizado, setCartModalRenderizado] = useState(false);
-
-   // const onRenderCartModal = () => {
-   //    setCartModalRenderizado(true);
-   // };
+   const [RenderedCart, setRenderedCart] = useState(false);
 
    return (
       <>
-         <Header value={value} setValue={setValue} setVisible={setVisible} setCartList={setCartList} />
-         <main className={CartModalRenderizado? styles.newMain : null}>
+         <Header value={value}
+            setValue={setValue}
+            setVisible={setVisible}
+            setCartList={setCartList} />
+         <main className={RenderedCart ? styles.newMain : null}>
             {
                visible ? <ProductList
                   productList={productList}
@@ -70,14 +52,14 @@ export const HomePage = ({ setVisible, visible, cartArray }) => {
                   setCartList={setCartList}
                   cartList={cartList}
                   cartArray={cartArray}
-                  setCartModalRenderizado={setCartModalRenderizado} />
+                  setRenderedCart={setRenderedCart} />
                   : <CartModal
                      setCartList={setCartList}
                      cartList={cartList}
                      setVisible={setVisible}
                      setValue={setValue}
                      value={value}
-                     setCartModalRenderizado={ setCartModalRenderizado} />
+                     setRenderedCart={setRenderedCart} />
             }
 
          </main>
