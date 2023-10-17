@@ -5,7 +5,7 @@
     justify-content: space-between;
     height: 4.75rem;
     display: flex;
-    padding: 0 1rem;
+    // padding: 0 1rem;
 
     img {
         width: 9.375rem;
@@ -16,6 +16,7 @@
         border: none;
         background-color: var(--grey--0);
         position: relative;
+        cursor: pointer;
 
         span {
             position: absolute;

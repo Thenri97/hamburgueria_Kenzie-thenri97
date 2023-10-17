@@ -5,7 +5,7 @@ export const ProductList = ({ productList, setValue, value, setCartList, cartLis
    setRenderedCart(false)
 
    return (
-      <ul className={styles.list}>
+      <ul className={`${styles.list} productlist`}>
          {productList.map((product) => (
             <ProductCard key={product.id}
                product={product}
@@ -14,7 +14,8 @@ export const ProductList = ({ productList, setValue, value, setCartList, cartLis
                productList={productList}
                setCartList={setCartList}
                cartList={cartList}
-               cartArray={cartArray} />
+               cartArray={cartArray} 
+              />
          ))}
       </ul>
    );

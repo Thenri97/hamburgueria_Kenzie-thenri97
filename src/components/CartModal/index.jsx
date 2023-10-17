@@ -25,7 +25,7 @@ export const CartModal = ({ cartList, setCartList, setVisible, setValue, value, 
             </button>
          </div>
          <div className={styles.list__container}>
-            <ul className={styles.list}>
+            <ul className={`${styles.list} cartlist`}>
                {cartList.map((product) => (
                   <CartItemCard key={product.id}
                      product={product}

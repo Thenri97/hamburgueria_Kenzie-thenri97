@@ -13,9 +13,7 @@ export const HomePage = ({ setVisible, visible, cartArray, setCartList, cartList
    // renderizações condições e o estado para exibir ou não o carrinho
    // filtro de busca
    // estilizar tudo com sass de forma responsiva
-
-
-
+   
    useEffect(() => {
       const getBurgers = async () => {
          try {
@@ -44,6 +42,8 @@ export const HomePage = ({ setVisible, visible, cartArray, setCartList, cartList
             setVisible={setVisible}
             setCartList={setCartList} />
          <main className={RenderedCart ? styles.newMain : null}>
+           
+            
             {
                visible ? <ProductList
                   productList={productList}
@@ -52,7 +52,8 @@ export const HomePage = ({ setVisible, visible, cartArray, setCartList, cartList
                   setCartList={setCartList}
                   cartList={cartList}
                   cartArray={cartArray}
-                  setRenderedCart={setRenderedCart} />
+                  setRenderedCart={setRenderedCart} 
+                  />
                   : <CartModal
                      setCartList={setCartList}
                      cartList={cartList}

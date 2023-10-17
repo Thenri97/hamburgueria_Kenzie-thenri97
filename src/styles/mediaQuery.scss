@@ -1,64 +1,59 @@
-@media (min-width:1024px) {
-
-    header {
-        img {
-            margin-left: 2rem !important;
-        }
-
-        button {
-            margin-right: 2rem !important;
-        }
-    }
-
-    .modal {
-        flex-wrap: unset !important;
-    }
-
-    ._list_1xe2f_1 {
-        flex-wrap: wrap !important;
-        justify-content: center;
-    }
-}
 
 @media (min-width:768px) {
 
     header {
-        width: 100vw;
-        position: fixed;
-        top: 0;
-
-        img {
-            margin-left: 3.5rem;
-        }
-
-        button {
-            margin-right: 4rem;
-        }
-    }
-    main{
-        margin-top: 4.75rem;
+        padding: 0 5rem !important;
     }
 
-    ._list_1xe2f_1 {
-        flex-wrap: wrap !important;
+    ul {
+        flex-wrap: wrap;
         justify-content: center;
     }
 
-    ._newMain_12mbx_1 {
-        justify-content: center;
+    main {
         display: flex;
-    }
+        justify-content: center;
 
-    ._cartName_qnuru_45 {
-        width: 30rem;
-    }
+        div {
+            max-width: 30rem;
+            width: 30rem;
+        }
 
-    ._listItem_176st_1 {
-        justify-content: normal;
-        gap: 1rem;
+        ul {
+            flex-wrap: unset!important;
 
-        button {
-            margin-left: 10rem;
+            li {
+                justify-content: normal;
+                gap: 1rem;
+
+                button {
+                    margin-left: 10rem;
+                }
+            }
         }
     }
+
+    main .productlist{
+        flex-wrap: wrap !important;
+
+        li button{
+            margin-left: 0px;
+        }
+    }
+
+    main .cartlist{
+        flex-wrap: unset !important;
+    }
+
+}
+
+@media (min-width:1024px) {
+    header {
+        padding: 0 2.7rem !important;
+    }
+
+    main ul {
+        flex-wrap: wrap;
+    }
+
 }
