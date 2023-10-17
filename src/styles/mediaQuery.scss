@@ -1,0 +1,65 @@
+@media (min-width:1024px) {
+
+    header {
+        img {
+            margin-left: 2rem !important;
+        }
+
+        button {
+            margin-right: 2rem !important;
+        }
+    }
+
+    .modal {
+        flex-wrap: unset !important;
+    }
+
+    ._list_1xe2f_1 {
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width:768px) {
+
+    header {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+
+        img {
+            margin-left: 3.5rem;
+        }
+
+        button {
+            margin-right: 4rem;
+        }
+    }
+    main{
+        margin-top: 4.75rem;
+    }
+
+    ._list_1xe2f_1 {
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+
+    ._newMain_12mbx_1 {
+        justify-content: center;
+        display: flex;
+    }
+
+    ._cartName_qnuru_45 {
+        width: 30rem;
+    }
+
+    ._listItem_176st_1 {
+        justify-content: normal;
+        gap: 1rem;
+
+        button {
+            margin-left: 10rem;
+        }
+    }
+}
